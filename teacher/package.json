@@ -1,8 +1,8 @@
 {
-  "name": "subject-api",
+  "name": "teacher",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon api.js"
   },

@@ -1,12 +1,12 @@
 {
-  "name": "teacher-api",
+  "name": "class",
   "version": "1.0.0",
   "description": "",
   "main": "api.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon api.js"
   },
-  "author": "",
+  "author": "Samit Kumar Patel",
   "license": "ISC",
   "dependencies": {
     "assert": "^1.4.1",
@@ -17,6 +17,6 @@
     "method-override": "^3.0.0",
     "mocha": "^9.0.2",
     "mongodb": "^3.1.10",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.9"
   }
 }

@@ -1,0 +1,60 @@
+---
+version: '3.3'
+services:
+  mongo:
+    image: mongo
+    restart: always
+  school:
+    build:
+        context: ./school
+    image: ghcr.io/samitkumarpatel/school/school
+    environment:
+        MONGODB_URI: 'mongodb://mongo:27017'
+    ports:
+    - "3000:3000"
+    depends_on: 
+    - mongo
+  class:
+    build:
+      context: ./class
+    image: ghcr.io/samitkumarpatel/school/class
+    environment:
+      MONGODB_URI: 'mongodb://mongo:27017'
+    ports:
+    - "3001:3000"
+    depends_on: 
+    - mongo
+  subject:
+    build:
+      context: ./subject
+    image: ghcr.io/samitkumarpatel/school/subject
+    environment:
+      MONGODB_URI: 'mongodb://mongo:27017'
+    ports:
+    - "3002:3000"
+    depends_on: 
+    - mongo
+  teacher:
+    build:
+      context: ./teacher
+    image: ghcr.io/samitkumarpatel/school/teacher
+    environment:
+      MONGODB_URI: 'mongodb://mongo:27017'
+    ports:
+    - "3003:3000"
+    depends_on: 
+    - mongo
+  student:
+    build:
+      context: ./student
+    image: ghcr.io/samitkumarpatel/school/student
+    environment:
+      MONGODB_URI: 'mongodb://mongo:27017'
+    ports:
+    - "3004:3000"
+    depends_on: 
+    - mongo
+    - school
+    - class
+    - teacher
+    - student
