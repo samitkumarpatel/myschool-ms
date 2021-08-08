@@ -19,7 +19,10 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Docker Compose
+    - name: Docker Compose build
       run: |
-        docker-compose --help
+        docker-compose build
+    - name: Docker Compose push
+      run: |
+        docker-compose push
     
