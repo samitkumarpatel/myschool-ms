@@ -57,4 +57,3 @@ services:
     - school
     - class
     - teacher
-    - student
